@@ -6,10 +6,10 @@ import openpyxl
 
 app=Flask(__name__)
 
-username='postgres'
-password='123456'
+username='your_username'
+password='your_password'
 host='@localhost'
-port=5432
+port='your_port'
 
 
 app.config['SQLALCHEMY_DATABASE_URI'] = f'postgresql://{username}:{password}{host}:{port}/neet'
