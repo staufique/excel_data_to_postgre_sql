@@ -1,0 +1,13 @@
+.container{
+    display: flex;
+    justify-content: center ;
+    align-items: center;
+}
+
+.form-container{    
+    display: flex;
+    justify-content: center;
+    background-color: aqua;
+    border: black 20px 10px;
+    
+}

@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Home</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    
+    <div class="container">
+
+        <form action="{{ url_for('college') }}" method="POST" enctype="multipart/form-data">
+            <label for="file">choose file for detail</label>
+            <input type="file" id="file" name="college">
+
+            <input type="submit" value="upload">
+        </form>
+
+        <form action="{{ url_for('choosefile') }}" method="POST" enctype="multipart/form-data">
+            <label for="file">choose file for cuttoff</label>
+            <input type="file" id="file" name="file">
+
+            <input type="submit" value="upload">
+        </form>
+
+    </div>
+
+    <!-- <div class="form-container">
+        <form action="">
+            <label for="marks">Rank*</label><br>
+            <input type="text" id="marks" name="marks"><br>
+
+            <label for="fname">Full Name*</label><br>
+            <input type="text" id="fname" name="marks"><br>
+
+            <label for="category">Select Category*</label><br>
+            <select name="state" id="state"><br>
+                <option value="select">----select----</option>
+                <option value="delhi">General</option>
+                <option value="sc">Sc</option>
+                <option value="st">St</option>
+            </select>
+            <br>
+
+            <label for="state">Select State*</label><br>
+            <select name="state" id="state"><br>
+                <option value="select">----select----</option>
+                <option value="delhi">delhi</option>
+            </select>
+            <br>
+
+            <label for="state">Course*</label><br>
+            <select name="course" id="state"><br>
+                <option value="select">----select----</option>
+                <option value="mbbs">M.B.B.S</option>
+                <option value="bhms">B.H.M.S</option>
+            </select>
+            <br>
+
+            <label for="mobile">Mobile No.</label><br>
+            <input type="tel" id="mobile" name="marks"><button>Get opt</button><br>
+
+            <label for="email">Email</label><br>
+            <input type="emai"><br>
+
+            <button>Predict</button>
+
+        </form>
+    </div> -->
+
+    <table border="1">
+        <tr>
+            <th>id</th>
+            <th>college_code</th>
+            <th>college_name</th>
+            <th>city</th>
+            <th>state</th>
+            <th>course</th>
+            <th>category</th>
+            <th>no_of_seats</th>
+        </tr>
+        {% for i in a %}
+        
+        <tr>
+            <td>{{i.id}}</td>
+            <td>{{i.college_code}}</td>
+            <td>{{i.college_name}}</td>
+            <td>{{i.city}}</td>
+            <td>{{i.state}}</td>
+            <td>{{i.course_name}}</td>
+            <td>{{i.category}}</td>
+            <td>{{i.no_of_seats}}</td>
+            <td></td>
+        </tr>
+        {% endfor %}
+    </table>
+
+</body>
+</html>
